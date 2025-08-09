@@ -1,8 +1,16 @@
-const App = () => {
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage.tsx';
+import DisplayPage from './DisplayPage.tsx';
+
+const App: React.FC = () => {
   return (
-    <div>
-      <h1>Fall 2025 Hack4Impact-UMD Technical Application Assessment</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<DisplayPage />} />
+      </Routes>
+    </Router>
   );
 };
 
