@@ -9,7 +9,6 @@ const HomePage: React.FC = () => {
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(search);
     if (!search.trim()) return;
 
     setLoading(true);
@@ -17,7 +16,6 @@ const HomePage: React.FC = () => {
     const response = await axios.get(`https://www.omdbapi.com/?s=${search}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`);
     
     const movies = response.data.Search;
-    console.log(movies);
     const mappedMovies: any[] = [];
     if (movies) {
       for (let i = 0; i < movies.length; i++) {

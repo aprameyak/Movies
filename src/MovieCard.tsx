@@ -18,11 +18,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const [details, setDetails] = useState<Movie | null>(null);
 
   const togglePlot = async () => {
-    console.log(movie.name);
     if (!details) {
       const response = await fetch(`https://www.omdbapi.com/?i=${movie.id}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`);
       const data = await response.json();
-      console.log(data);
       let mappedData: any = {};
       mappedData.name = data.Title || '';
       mappedData.year = data.Year || '';  
