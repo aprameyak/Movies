@@ -14,7 +14,10 @@ const DisplayPage: React.FC = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const query = searchParams.get('q');
-  const movies: Movie[] = location.state?.movies || [];
+  let movies: Movie[] = [];
+  if (location.state && location.state.movies) {
+    movies = location.state.movies;
+  }
 
   return (
     <div style={{

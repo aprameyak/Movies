@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const HomePage: React.FC = () => {
   const [search, setSearch] = useState('');
-
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(search);
     if (!search.trim()) return;
 
     setLoading(true);
 
     const response = await axios.get(`https://www.omdbapi.com/?s=${search}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`);
     
-    const movies = response.data.Search || [];
-    const mappedMovies = movies.map((movie: any) => ({
-      name: movie.Title,
-      year: movie.Year,
-      id: movie.imdbID,
-      type: movie.Type,
-      image: movie.Poster
-    }));
+    const movies = response.data.Search;
+    console.log(movies);
+    const mappedMovies: any[] = [];
+    if (movies) {
+      for (let i = 0; i < movies.length; i++) {
+        const movie = movies[i];
+        const newMovie: any = {};
+        newMovie.name = movie.Title;
+        newMovie.year = movie.Year;
+        newMovie.id = movie.imdbID;
+        newMovie.type = movie.Type;
+        newMovie.image = movie.Poster;
+        mappedMovies.push(newMovie);
+      }
+    }
     
     navigate(`/search?q=${encodeURIComponent(search)}`, { 
       state: { movies: mappedMovies } 
