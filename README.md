@@ -8,32 +8,6 @@ A React-based movie search application built with TypeScript and Vite.
 - View movie details
 - Responsive design
 
-## Getting Started
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Lint
-
-```bash
-npm run lint
-```
-
 ## Tech Stack
 
 - React 19
