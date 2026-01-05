@@ -1,7 +1,7 @@
 # Movie Search App
 
 A React-based movie search application built with TypeScript and Vite.
-
+ff
 ## Features
 
 - Search for movies
