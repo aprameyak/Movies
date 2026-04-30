@@ -1,0 +1,44 @@
+.movie-card:hover {
+  border-color: #aa8139 !important;
+  transform: translateY(-2px);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.search-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 90%;
+  max-width: 560px;
+}
+
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .search-title {
+    font-size: 32px !important;
+  }
+
+  .results-title {
+    font-size: 24px !important;
+  }
+}

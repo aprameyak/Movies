@@ -64,14 +64,14 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         }}>
           <p style={{ marginBottom: '10px' }}><strong>Year:</strong> {movie.year}</p>
           <p style={{ marginBottom: '10px' }}><strong>Type:</strong> {movie.type}</p>
-          <p><strong>Plot:</strong> {details.plot || 'loading'}</p>
+          <p><strong>Plot:</strong> {details.plot || 'Loading...'}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div style={{
+    <div className="movie-card" style={{
       backgroundColor: '#1e1e1e',
       border: '2px solid #2d2d2d',
       borderRadius: '10px',
@@ -80,8 +80,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       cursor: 'pointer',
 
     }} onClick={togglePlot}>
-      <img 
-        src={movie.image !== 'N/A' ? movie.image : 'https://via.placeholder.com/300x400?text=No+Image'} 
+      <img
+        src={movie.image !== 'N/A' ? movie.image : 'https://placehold.co/300x400?text=No+Image'}
         alt={movie.name}
         style={{
           width: '100%',

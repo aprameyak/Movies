@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
     }}>
 
       
-      <h1 style={{
+      <h1 className="search-title" style={{
         color: '#aa8139',
         fontSize: '48px',
         marginBottom: '50px',
@@ -60,20 +60,15 @@ const HomePage: React.FC = () => {
         fontWeight: 'bold',
 
       }}>Movie Search</h1>
-      
-      <form onSubmit={handleSearch} style={{
-        display: 'flex',
-        gap: '15px',
-        alignItems: 'center',
 
-      }}>
+      <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search for a movie..."
+          className="search-input"
           style={{
-            width: '500px',
             padding: '15px 20px',
             borderRadius: '25px',
             border: 'none',
@@ -83,7 +78,7 @@ const HomePage: React.FC = () => {
             outline: 'none'
           }}
         />
-        <button type="submit" disabled={loading} style={{
+        <button type="submit" disabled={loading} className="search-btn" style={{
           padding: '15px 30px',
           borderRadius: '25px',
           border: 'none',
@@ -94,7 +89,7 @@ const HomePage: React.FC = () => {
           cursor: loading ? 'not-allowed' : 'pointer',
           opacity: loading ? 0.7 : 1
         }}>
-          {loading ? 'loading' : 'Search'}
+          {loading ? 'Loading...' : 'Search'}
         </button>
       </form>
       

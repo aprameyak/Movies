@@ -31,8 +31,9 @@ const DisplayPage: React.FC = () => {
     }}>
 
       
-      <button 
+      <button
         onClick={() => window.history.back()}
+        className="back-btn"
         style={{
           color: '#aa8139',
           backgroundColor: 'transparent',
@@ -44,8 +45,8 @@ const DisplayPage: React.FC = () => {
           position: 'relative'
         }}
       >← Back</button>
-      
-      <h2 style={{
+
+      <h2 className="results-title" style={{
         color: '#aa8139',
         fontSize: '36px',
         marginBottom: '30px',
@@ -73,7 +74,7 @@ const DisplayPage: React.FC = () => {
           fontSize: '18px',
           zIndex: 1,
           position: 'relative'
-        }}>no matches</p>
+        }}>No matches found</p>
       )}
     </div>
   );
